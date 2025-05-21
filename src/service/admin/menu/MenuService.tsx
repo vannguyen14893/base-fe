@@ -3,14 +3,34 @@ import {getIconComponent} from "../../../utils/IconMapper";
 const mockMenuData = [
     {
         id: 1,
-        key: 'home',
+        key: 'payment-hub',
         path: '/',
         icon: 'HomeOutlined',
         order: 1,
         translations: {
-            en: 'Home',
-            vi: 'Trang chủ'
-        }
+            en: 'Payment Hub',
+            vi: 'Payment Hub'
+        },
+        children: [
+            {
+                id: 9,
+                key: 'edc-payment-hub',
+                order: 1,
+                translations: {
+                    en: 'Edc-payment-hub',
+                    vi: 'Edc-payment-hub'
+                }
+            },
+            {
+                id: 10,
+                key: 'thai-qr-payment-hub',
+                order: 2,
+                translations: {
+                    en: 'Thai-qr-payment-hub',
+                    vi: 'Thai-qr-payment-hub'
+                }
+            }
+        ]
     },
     {
         id: 2,
@@ -23,39 +43,6 @@ const mockMenuData = [
             vi: 'Bảng điều khiển'
         }
     },
-    {
-        id: 3,
-        key: 'products',
-        path: '/products',
-        icon: 'AppstoreOutlined',
-        order: 3,
-        translations: {
-            en: 'Products',
-            vi: 'Sản phẩm'
-        },
-        children: [
-            {
-                id: 4,
-                key: 'electronics',
-                path: '/products/electronics',
-                order: 1,
-                translations: {
-                    en: 'Electronics',
-                    vi: 'Điện tử'
-                }
-            },
-            {
-                id: 5,
-                key: 'clothing',
-                path: '/products/clothing',
-                order: 2,
-                translations: {
-                    en: 'Clothing',
-                    vi: 'Quần áo'
-                }
-            }
-        ]
-    }
 ];
 
 export const fetchMockMenu = async (lang: string): Promise<MenuItem[]> => {

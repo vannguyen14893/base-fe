@@ -3,5 +3,6 @@ import {useAuth} from "../../provider/AuthProvider";
 
 export default function PrivateRoute() {
     const {user} = useAuth();
-    return user ? <Outlet/> : <Navigate to="/login" replace/>;
+    const accessToken = localStorage.getItem('access_token');
+    return accessToken ? <Outlet/> : <Navigate to="/login" replace/>;
 }

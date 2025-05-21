@@ -5,7 +5,8 @@ import {MenuItem} from "../../service/admin/menu/MenuService";
 import {useMenu} from "../../hooks/useMenu";
 
 const {SubMenu} = Menu;
-const AppMenu: React.FC = () => {
+
+function AppMenu({handleChange}: { handleChange: (e: any) => void; }) {
     const location = useLocation();
     const {menuItems} = useMenu();
     const renderMenuItems = (items: MenuItem[]) => {
@@ -13,6 +14,7 @@ const AppMenu: React.FC = () => {
             if (item.children) {
                 return (
                     <SubMenu
+                        onClick={handleChange}
                         key={item.key}
                         icon={item.icon}
                         title={item.label}>

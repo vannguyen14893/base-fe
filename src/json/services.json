@@ -1,0 +1,10 @@
+[
+  {
+    "key": "http://localhost:8080/v3/api-docs",
+    "label": "edc-payment-hub"
+  },
+  {
+    "key": "http://localhost:8999/v3/api-docs",
+    "label": "thai-qr-payment-hub"
+  }
+]

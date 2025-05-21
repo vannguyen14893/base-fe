@@ -1,8 +1,11 @@
-import http from "../../config/axios/AxiosConfig";
 import {LoginRequest} from "../../dto/LoginRequest";
+import data from '../../json/login-data.json';
 
-function LoginService(payload: LoginRequest) {
-    return http.post("/custom/token", payload);
+async function LoginService(payload: LoginRequest) {
+    try {
+        return {data};
+    } catch (error) {
+        throw new Error('Failed to fetch login data');
+    }
 }
-
 export default LoginService;

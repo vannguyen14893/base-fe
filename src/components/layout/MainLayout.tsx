@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Avatar, Button, Dropdown, Layout, theme} from 'antd';
-import {Link, Outlet} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import AppMenu from "./AppMenu";
 import LanguageSwitcher from "../common/languages/LanguageSwitcher";
 import './css/index.css';
@@ -8,12 +8,22 @@ import {useAppTheme} from "../../hooks/useAppTheme";
 import {ThemeToggle} from "../common/theme/ThemeSwitcher";
 import {LogoutOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined} from "@ant-design/icons";
 import {useAuth} from "../../provider/AuthProvider";
+import {RedocStandalone} from "redoc";
+import {darkTheme, lightTheme} from "../../config/theme";
+import services from "../../json/services.json"
+
 const {Header, Content, Sider} = Layout;
 const MainLayout: React.FC = () => {
     const {isDarkMode} = useAppTheme();
     const [collapsed, setCollapsed] = useState(false);
     const {user, logout} = useAuth();
-
+    const [fileName, setFileName] = useState('');
+    const handleChange = (value: any) => {
+        services.filter(item => item.label === value.key).map(item => setFileName(item.key));
+    };
+    useEffect(() => {
+        setFileName(services[0].key);
+    }, [fileName])
     const menuItems = [
         {
             key: 'profile',
@@ -30,6 +40,7 @@ const MainLayout: React.FC = () => {
     const {
         token: {colorBgContainer, colorText, colorBorder},
     } = theme.useToken();
+
     return (
         <Layout style={{minHeight: '100vh'}}>
             <Sider width={250}
@@ -45,8 +56,8 @@ const MainLayout: React.FC = () => {
                    collapsible
                    trigger={null}
                    theme={isDarkMode ? 'dark' : 'light'}>
-                <div className="logo" style={{backgroundColor: colorBgContainer, color: colorText}}>LOGO</div>
-                <AppMenu/>
+                <div className="logo" style={{backgroundColor: colorBgContainer, color: colorText}}>ITECH</div>
+                <AppMenu handleChange={handleChange}/>
             </Sider>
             <Layout>
                 <Header style={{
@@ -55,7 +66,6 @@ const MainLayout: React.FC = () => {
                     background: colorBgContainer,
                     justifyContent: 'space-between',
                     alignItems: 'center',
-
                     borderBottom: `1px solid ${colorBorder}`
                 }}>
                     <Button
@@ -72,7 +82,8 @@ const MainLayout: React.FC = () => {
                         padding: 0,
                         display: 'flex',
                         justifyContent: 'flex-end',
-                        alignItems: 'center'}}>
+                        alignItems: 'center'
+                    }}>
                         <ThemeToggle/>
                         <LanguageSwitcher/>
                         <Dropdown menu={{items: menuItems}} placement="bottomRight">
@@ -85,7 +96,18 @@ const MainLayout: React.FC = () => {
 
                 </Header>
                 <Content style={{margin: '10px', background: colorBgContainer}}>
-                    <Outlet/>
+                    {fileName ? <RedocStandalone
+                        specUrl={fileName}
+                        options={{
+                            nativeScrollbars: true,
+                            theme: isDarkMode ? darkTheme : lightTheme,
+                            scrollYOffset: 60,
+                            hideDownloadButton: false,
+                            expandSingleSchemaField: true,
+                            menuToggle: true,
+                        }}/> : null}
+
+                    {/*<Outlet/>*/}
                 </Content>
             </Layout>
         </Layout>

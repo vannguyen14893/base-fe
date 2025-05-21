@@ -1,0 +1,22 @@
+{
+  "id": "7a6cdf5f-9740-47f8-bbaf-7db8744abf25",
+  "status": "200",
+  "message": "Thành công",
+  "data": {
+    "access_token": "eyJraWQiOiI3ZGM4ZDRjOS1jOWE3LTQ5NTEtODkxZS05MmZiMTliNGZhNmUiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDg4IiwiaXBfYWRkcmVzcyI6IjE5Mi4xNjguMS4xIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsInZlcnNpb24iOiIxLjAiLCJhdWQiOiJzYWdhIiwibmJmIjoxNzQ3Nzk5NTM0LCJncmFudF90eXBlIjoiY3VzdG9tX3Bhc3N3b3JkIiwidXNlcl9pZCI6MSwic2NvcGUiOlsicmVhZCIsIm9wZW5pZCIsInByb2ZpbGUiLCJ3cml0ZSJdLCJhdXRoX3RpbWUiOjE3NDc3OTk1MzQsImV4cCI6MTc0NzgwMzEzNCwiaWF0IjoxNzQ3Nzk5NTM0LCJqdGkiOiIyZTNiY2FkYy00NWVkLTQxNTgtOTRlZS01Nzg1MjYyOTY4NjEifQ.cohBrswxfV1bFX7AsafinH61pnz3HxsFxf4jJ5py1sHYErkC3ziYhSNfekDBmvTdw-DDvm3LitXGcNj8Zvlej3PW6GLGpQ3uJNtBTbFE2BWhRgO83RZLviFUUUX2-jMnsimrPe1IrFQM78uxG34M9q8HHPZnWG0aLBXV9Koq_hz4Aw93xRHOME8hH1SxlZHXj_rEg2NNqYNVwDWLY2RfVxj6X0NTzAi3CzgqOt_cqOQUqPz5eKf9Iq9HjaacLUZgS5VEJ1Pclr3gZAxF4ir3eWIc53iI3hO_doLQBTvcwVvV2kHhboaxzTVjfudLyTf9SeyotupOnDExfhKQR3zJSQ",
+    "refresh_token": "5AFaiYIKH4SDiXo6cgpSVbyW5Y-x2PXXSYpiEYxJVBtedD6wI44m9B1UncwNriBgqy8qBZTZL7HRTNkwQcZOngsKcsgqTGLSyk8qfNxZBqs4iYpjNk7PfK4GA0OIT4lU",
+    "expires_at": 3600,
+    "token_type": "custom_password",
+    "additional_parameters": {
+      "username": "1234567890"
+    },
+    "scopes": [
+      "read",
+      "openid",
+      "profile",
+      "write"
+    ],
+    "otp": "749311",
+    "type_authentication": "SMS"
+  }
+}
