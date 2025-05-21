@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Avatar, Button, Dropdown, Layout, theme} from 'antd';
 import {Link} from 'react-router-dom';
 import AppMenu from "./AppMenu";
@@ -21,8 +21,9 @@ const MainLayout: React.FC = () => {
     const handleChange = (value: any) => {
         services.filter(item => item.label === value.key).map(item => setFileName(item.key));
     };
+
     useEffect(() => {
-        setFileName(services[0].key);
+        //  setFileName(services[0].key);
     }, [fileName])
     const menuItems = [
         {

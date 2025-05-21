@@ -39,15 +39,15 @@ export const darkTheme = {
         textColor: '#00a8ff',
     },
     codeBlock: {
-        backgroundColor: '#2d2d2d',
+        backgroundColor: '#2d2d2d'
     },
     typography: {
-        fontSize: '14px',
-        lineHeight: '1.5',
-        fontWeightRegular: '400',
+        fontSize: '16px',
+        lineHeight: '1',
+        fontWeightBold: '600',
         headings: {
             fontWeight: '600',
-        },
+        }
     },
 };
 export const lightTheme = {
@@ -73,32 +73,36 @@ export const lightTheme = {
             delete: '#cc3333',
         },
         border: {
-            dark: '#d9d9d9',
-            light: '#f0f0f0',
-        },
+            dark: 'rgb(255, 255, 255)',
+            light: 'rgb(255, 255, 255)',
+        }
     },
     sidebar: {
         textColor: '#000000',
         activeTextColor: '#1890ff',
         groupItems: {
-            activeBackgroundColor: 'rgba(24, 144, 255, 0.1)',
+            activeBackgroundColor: 'rgb(255, 255, 255)',
             activeTextColor: '#1890ff',
         },
     },
     rightPanel: {
-        backgroundColor: '#fafafa',
+        backgroundColor: 'rgb(255, 255, 255)',
         textColor: '#1890ff',
     },
     codeBlock: {
-        backgroundColor: '#f5f5f5',
-
+         backgroundColor: 'rgb(255, 255, 255)',
+    },
+    code: {
+        backgroundColor: '#000000',
+        wrap: true
     },
     typography: {
-        fontSize: '14px',
-        lineHeight: '1.5',
-        fontWeightRegular: '400',
+        fontSize: '16px',
+        lineHeight: '1',
+        // fontWeightRegular: '400',
+        fontWeightBold: '600',
         headings: {
-            fontWeight: '600',
+            fontWeight: '800',
         },
     },
 };
